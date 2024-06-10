@@ -10,7 +10,6 @@
             <a href="{{ route('products.create') }}">
                 <button class="bg-gray-100 px-10 py-2 rounded-md font-semibold">Add</button>
             </a>
-
         </div>
 
         <div class="grid md:grid-cols-3 grid-cols-1 mt-4 gap-6">
@@ -21,13 +20,18 @@
                     <p class="text-xl font-light">{{ $product->nama }}</p>
                     <p class="font-semibold text-gray-400">Rp. {{ number_format($product->harga) }}</p>
                 </div>
-                <a href="{{ route('products.edit', $product) }}">
-                    <button class="bg-gray-100 px-10 py-2 w-full rounded-md font-semibold">Edit</button>
-                </a>
+                <div class="flex space-x-2">
+                    <a href="{{ route('products.edit', $product) }}">
+                        <button class="bg-gray-100 px-10 py-2 w-full rounded-md font-semibold">Edit</button>
+                    </a>
+                    <!-- Tambahkan tombol baru di sini -->
+                    <a href="{{ route('products.detail', $product) }}">
+                        <button class="bg-blue-100 px-10 py-2 w-full rounded-md font-semibold">Detail</button>
+                    </a>
+                </div>
             </div>
             @endforeach
         </div>
-
 
         <div class="mt-4">
             {{ $products->links() }}

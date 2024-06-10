@@ -84,4 +84,10 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')->with('success', 'Delete Product Success');
     }
+
+
+    public function show(Product $product)
+    {
+        return view('products.detail', compact('product'));
+    }
 }
